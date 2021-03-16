@@ -7,8 +7,9 @@ import PlayListID from '../Containers/PlayListID';
 import SongsList from '../Containers/SongsList';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import ErroTemplate from '../ErrorBoundary/ErrorTemplate';
-import styles from './App.module.css';
 import NavigationList from './NavigationList';
+import { PropTypes } from 'prop-types';
+import styles from './App.module.css';
 
 function App(props) {
   return (
@@ -41,6 +42,10 @@ const mapStateToProps = (state) => {
   return {
     error: state.songs.error
   }
+}
+
+App.propTypes = {
+  error: PropTypes.string
 }
 
 export default connect(mapStateToProps)(App);

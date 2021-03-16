@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ButtonComponent from '../Components/ButtonComponent';
 import PlayListComponent from '../Components/PlayListComponent';
 import { CREATE_LIST_BUTTON_CLICK, PLAYLIST_COUNTER, SAVE_TIME } from '../Constants/Actions';
+import {PropTypes} from 'prop-types';
 
 class PlayList extends Component {
 
@@ -38,6 +39,14 @@ const mapDispatchToProps = (dispatch) => {
         handleCounter: () => dispatch({type: PLAYLIST_COUNTER}),
         saveTime: () => dispatch({type: SAVE_TIME, payload: new Date().toLocaleTimeString()}),
     }
+}
+
+PlayList.propTypes = {
+    clickState: PropTypes.bool,
+    handleClick: PropTypes.func,
+    handleCounter: PropTypes.func,
+    saveTime: PropTypes.func,
+    history: PropTypes.object
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayList);

@@ -6,6 +6,7 @@ import DisplaySongs from '../Components/DisplaySongs';
 import InputComponent from '../Components/InputComponent';
 import { ADD_TO_PLAYLIST, SHOW_LIST } from '../Constants/Actions';
 import styles from './PlayListContainer.module.css';
+import {PropTypes} from 'prop-types';
 
 class PlayListID extends Component {
 
@@ -95,6 +96,18 @@ const mapDispatchToProps = (dispatch) => {
       saveSongs: (data, id) => dispatch({type: ADD_TO_PLAYLIST, payload: {data, id}}),
       showListMethod: (objName, value) => dispatch({type: SHOW_LIST, payload: {objName, value}}),
     }
+}
+
+PlayListID.propTypes = {
+    displayArray: PropTypes.array,
+    playListObject: PropTypes.object,
+    timeArray: PropTypes.array,
+    showListState: PropTypes.object,
+    callSongsAPI: PropTypes.func,
+    saveSongs: PropTypes.func,
+    showListMethod: PropTypes.func,
+    match: PropTypes.object,
+    history: PropTypes.object
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayListID);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styles from './DisplaySongs.module.css';
 import Spinner from './Spinner';
+import {PropTypes} from 'prop-types';
 
 const DisplaySongs = (props) => (
     <div className = {styles.parentContainer}>
@@ -33,6 +34,14 @@ const mapStateToProps = (state) => {
     loading: state.songs.isLoading,
     error: state.songs.error,
   }
+}
+
+DisplaySongs.propTypes = {
+  inputText: PropTypes.string,
+  displayArray: PropTypes.array,
+  loading: PropTypes.bool,
+  error: PropTypes.string,
+  handleAdd: PropTypes.func
 }
 
 export default connect(mapStateToProps)(DisplaySongs);

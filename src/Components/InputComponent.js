@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { INPUT_TEXT } from '../Constants/Actions';
 import styles from './InputComponent.module.css';
+import {PropTypes} from 'prop-types';
 
 const InputComponent = (props) => {
     const handleChange = (e) => {
@@ -29,6 +30,11 @@ const mapDispatchToProps = (dispatch) => {
     return {
       setInputText: (str) => dispatch({type: INPUT_TEXT, payload: str})
     }
+}
+
+InputComponent.propTypes = {
+    inputText: PropTypes.string,
+    setInputText: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(InputComponent);

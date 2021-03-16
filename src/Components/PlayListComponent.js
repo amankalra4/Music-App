@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { CREATE_LIST_BUTTON_CLICK } from '../Constants/Actions';
-import styles from './PlayListComponent.module.css'
+import styles from './PlayListComponent.module.css';
+import {PropTypes} from 'prop-types';
 
 const PlayListComponent = (props) => {
     let elem = [];
@@ -33,6 +34,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         handleClick: () => dispatch({type: CREATE_LIST_BUTTON_CLICK, payload: false})
     }
+}
+
+PlayListComponent.propTypes = {
+    getTime: PropTypes.array,
+    playListCounter: PropTypes.number,
+    handleClick: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayListComponent);

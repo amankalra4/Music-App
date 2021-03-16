@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ButtonComponent from '../Components/ButtonComponent';
 import styles from './PlayListContainer.module.css';
+import {PropTypes} from 'prop-types';
 
 class PlayListContainer extends Component {
 
@@ -62,6 +63,11 @@ const mapStateToProps = (state) => {
     return {
         playListObject: state.playList.playList
     }
+}
+
+PlayListContainer.propTypes = {
+    playListObject: PropTypes.object,
+    location: PropTypes.object
 }
 
 export default connect(mapStateToProps)(PlayListContainer);
