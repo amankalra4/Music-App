@@ -16,8 +16,15 @@ class PlayListID extends Component {
     }
 
     handleAdd = (id) => {
-        let foundElement = this.props.displayArray[0].find(el => el.uniqueID === id);
-        let playlistName = this.props.location.pathname.replaceAll(`/`, '');
+        let foundElement = [];
+        for(let i = 0; i < this.props.displayArray[0].length; i++) {
+            if(this.props.displayArray[0][i].uniqueID === id) {
+                foundElement = this.props.displayArray[0][i]
+                break;
+            }
+        }
+        let playlistID = this.props.match.params.playlistId;
+        let playlistName = `playList${playlistID}`;
         let obj;
         if(this.props.playListObject.hasOwnProperty(playlistName)) {
             obj = {...this.props.playListObject[playlistName], [id]: {...foundElement, addedAt: new Date().toLocaleTimeString()}}
@@ -37,25 +44,28 @@ class PlayListID extends Component {
     }
 
     handleShow = () => {
-        this.props.history.push({pathname: `/playlist/showPlayList/`}, [this.props.location.pathname.replaceAll(`/`, '')])
+        let playlistID = this.props.match.params.playlistId;
+        let playlistName = `playList${playlistID}`;
+        this.props.history.push({pathname: `/playlist/showPlayList/`}, [playlistName])
     }
 
     render() {
-        let name = this.props.location.pathname.replaceAll(`/`, '');
+        let playlistID = this.props.match.params.playlistId;
+        let playlistName = `Play List ${playlistID}`;
         return (
             <div>
                 {this.props.timeArray.length !== 0 
                     ? 
                         <React.Fragment>
                             <div className = {styles.header}>
-                                <h2 className = {styles.pageHeading}>{name}</h2>
+                                <h2 className = {styles.pageHeading}>{playlistName}</h2>
                                 <ButtonComponent name = {`Previous Page`} handleChange = {this.props.history.goBack} />
                             </div>
                             <InputComponent />
                             {
-                                this.props.showListState[name] 
+                                this.props.showListState[`playList${playlistID}`] 
                                     && 
-                                <ButtonComponent name = {`Show ${name}`} handleChange = {this.handleShow} />
+                                <ButtonComponent name = {`Show ${playlistName}`} handleChange = {this.handleShow} />
                             }
                             <DisplaySongs addButton handleAdd = {this.handleAdd}/>
                         </React.Fragment>

@@ -2,11 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-In the project, we have used following concepts in React:
-
 # Overview About the Project
 
-This application enables the users to do the following
+This application enables the users to do the following:
     - Lists all the songs available in various albums and with the ability to search for a song
     - Enables the user to create a custom playlist and add songs to it
     - Enables the user to randomly shuffle all the songs in every playlist
