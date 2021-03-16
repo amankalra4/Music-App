@@ -1,0 +1,12 @@
+.App {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #0a0b21;
+    font-size: x-large;
+    font-weight: 500;
+    color: #4da8da;
+}

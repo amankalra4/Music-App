@@ -1,0 +1,32 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.pageHeading {
+    text-transform: capitalize;
+    text-align: center;
+    color: #0a0b21;
+}
+
+.parentContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    margin: 2rem;
+}
+
+.childContainer {
+    border: 1px solid #4da8da;
+    padding: 1rem;
+    box-shadow: 0px 0px 4px 2px rgb(168 144 144);
+}
+
+@media screen and (max-width: 600px) {
+    .parentContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1em 1em;
+        margin: 1rem 1rem;
+    }
+}

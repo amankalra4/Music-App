@@ -1,0 +1,21 @@
+.LinkTab {
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.LinkTab a {
+    text-decoration: none;
+    color: #0a0b21;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 8px;
+}
+
+.LinkTab a:hover,
+.LinkTab a:active,
+.LinkTab a.active {
+    cursor: pointer;
+    background-color: #00398a;
+    color: white;
+    border-radius: 5px;
+}

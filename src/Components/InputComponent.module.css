@@ -1,0 +1,23 @@
+.inputText {
+    box-sizing: border-box;
+    margin: 1rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: large;
+    font-weight: 400;
+    text-transform: capitalize;
+    width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+    .inputText {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .inputText {
+        width: 60%;
+    }
+}

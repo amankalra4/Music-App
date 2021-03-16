@@ -1,0 +1,19 @@
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.button {
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00398a;
+    outline: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
